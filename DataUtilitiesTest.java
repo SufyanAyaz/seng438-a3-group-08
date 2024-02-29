@@ -667,6 +667,7 @@ public class DataUtilitiesTest extends DataUtilities {
 //	    ----------------------- NEW TESTS FOR A3 -----------------------------
 	    
 	    
+	 // Test for checking equality of two null arrays. They should be considered equal.
 	    @Test
 	    public void testEqual_NullArrays() {
 	        double[][] a = null;
@@ -674,6 +675,7 @@ public class DataUtilitiesTest extends DataUtilities {
 	        assertTrue(DataUtilities.equal(a, b));
 	    }
 
+	    // Test for checking inequality when the first array is null and the second array is not null.
 	    @Test
 	    public void testEqual_NullArrayA() {
 	        double[][] a = null;
@@ -681,6 +683,7 @@ public class DataUtilitiesTest extends DataUtilities {
 	        assertFalse(DataUtilities.equal(a, b));
 	    }
 
+	    // Test for checking inequality when the second array is null and the first array is not null.
 	    @Test
 	    public void testEqual_NullArrayB() {
 	        double[][] a = new double[][] { { 1.0, 2.0 }, { 3.0, 4.0 } };
@@ -688,6 +691,7 @@ public class DataUtilitiesTest extends DataUtilities {
 	        assertFalse(DataUtilities.equal(a, b));
 	    }
 
+	    // Test for checking inequality when arrays have different dimensions.
 	    @Test
 	    public void testEqual_DifferentDimensions() {
 	        double[][] a = new double[][] { { 1.0, 2.0 }, { 3.0, 4.0 } };
@@ -695,6 +699,7 @@ public class DataUtilitiesTest extends DataUtilities {
 	        assertFalse(DataUtilities.equal(a, b));
 	    }
 
+	    // Test for checking inequality when arrays have different values.
 	    @Test
 	    public void testEqual_DifferentValues() {
 	        double[][] a = new double[][] { { 1.0, 2.0 }, { 3.0, 4.0 } };
@@ -702,6 +707,7 @@ public class DataUtilitiesTest extends DataUtilities {
 	        assertFalse(DataUtilities.equal(a, b));
 	    }
 
+	    // Test for checking equality when arrays have same values.
 	    @Test
 	    public void testEqual_SameValues() {
 	        double[][] a = new double[][] { { 1.0, 2.0 }, { 3.0, 4.0 } };
@@ -709,6 +715,7 @@ public class DataUtilitiesTest extends DataUtilities {
 	        assertTrue(DataUtilities.equal(a, b));
 	    }
 
+	    // Test for checking equality when arrays contain NaN values.
 	    @Test
 	    public void testEqual_NaNValues() {
 	        double[][] a = new double[][] { { Double.NaN, 2.0 }, { 3.0, Double.NaN } };
@@ -716,6 +723,7 @@ public class DataUtilitiesTest extends DataUtilities {
 	        assertTrue(DataUtilities.equal(a, b));
 	    }
 
+	    // Test for checking equality when arrays contain Infinity values.
 	    @Test
 	    public void testEqual_INFValues() {
 	        double[][] a = new double[][] { { Double.POSITIVE_INFINITY, 2.0 }, { 3.0, Double.NEGATIVE_INFINITY } };
@@ -723,6 +731,7 @@ public class DataUtilitiesTest extends DataUtilities {
 	        assertTrue(DataUtilities.equal(a, b));
 	    }
 
+	    // Test for checking inequality when arrays have different lengths.
 	    @Test
 	    public void testDifferentLengthArrays() {
 	        double[][] a = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}};
@@ -733,112 +742,113 @@ public class DataUtilitiesTest extends DataUtilities {
 	        assertFalse("Arrays should not be equal", result);
 	    }
 
+
 	    
-		 @Test
-		 public void calculateColumnTotalForTwoValues_ValidRows() {
-			 int[] validRows = {0,1};
- 		     mockingContext.checking(new Expectations() {
-		         {
-		             one(values).getRowCount();
-		             will(returnValue(2));
-		             one(values).getValue(0, 0);
-		             will(returnValue(7.5));
-		             one(values).getValue(1, 0);
-		             will(returnValue(2.5));
-		         }
-		     });
-		     double result = DataUtilities.calculateColumnTotal(values, 0,validRows);
-		     assertEquals(result, 10.0, .000000001d);
-		 }
-		 
-		 
+	    @Test
+	    public void calculateColumnTotalForTwoValues_ValidRows() {
+	        // Testing the calculation of column total for two valid rows
+	        int[] validRows = {0,1};
+	        mockingContext.checking(new Expectations() {
+	            {
+	                one(values).getRowCount();
+	                will(returnValue(2));
+	                one(values).getValue(0, 0);
+	                will(returnValue(7.5));
+	                one(values).getValue(1, 0);
+	                will(returnValue(2.5));
+	            }
+	        });
+	        double result = DataUtilities.calculateColumnTotal(values, 0, validRows);
+	        assertEquals(result, 10.0, .000000001d);
+	    }
 
-		 
-		 
-		 @Test
-		 public void calculateRowTotalForTwoValues_ValidColums() {
-			 int[] validColums = {0,1};
-		     mockingContext.checking(new Expectations() {
-		         {
-		             one(values).getColumnCount();
-		             will(returnValue(2));
-		             one(values).getValue(0, 0);
-		             will(returnValue(6.5));
-		             one(values).getValue(0, 1);
-		             will(returnValue(3.5));
-		         }
-		     });
-		     double result = DataUtilities.calculateRowTotal(values, 0,validColums);
-		     assertEquals("Unexpected result for calculateRowTotal", 10.0, result, .000000001d);
-		 }
+	    @Test
+	    public void calculateRowTotalForTwoValues_ValidColums() {
+	        // Testing the calculation of row total for two valid columns
+	        int[] validColums = {0,1};
+	        mockingContext.checking(new Expectations() {
+	            {
+	                one(values).getColumnCount();
+	                will(returnValue(2));
+	                one(values).getValue(0, 0);
+	                will(returnValue(6.5));
+	                one(values).getValue(0, 1);
+	                will(returnValue(3.5));
+	            }
+	        });
+	        double result = DataUtilities.calculateRowTotal(values, 0, validColums);
+	        assertEquals("Unexpected result for calculateRowTotal", 10.0, result, .000000001d);
+	    }
 
-		 @Test
-		 public void calculateRowTotalnegative_ValColums() {
-			 int[] validColums = {0,1};
-		     mockingContext.checking(new Expectations() {
-		         {
-		             one(values).getColumnCount();
-		             will(returnValue(-1));
-		         }
-		     });
-		     double result = DataUtilities.calculateRowTotal(values, 0,validColums);
-		     assertEquals("Unexpected result for calculateRowTotal", 0, result, .000000001d);
-		 }
+	    @Test
+	    public void calculateRowTotalnegative_ValColums() {
+	        // Testing the calculation of row total with negative valid columns
+	        int[] validColums = {0,1};
+	        mockingContext.checking(new Expectations() {
+	            {
+	                one(values).getColumnCount();
+	                will(returnValue(-1));
+	            }
+	        });
+	        double result = DataUtilities.calculateRowTotal(values, 0, validColums);
+	        assertEquals("Unexpected result for calculateRowTotal", 0, result, .000000001d);
+	    }
 
-		 
-		 
-		    @Test
-		    public void testCloneNotNull() {
-		        double[][] original = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}};
-		        double[][] cloned = DataUtilities.clone(original);
-		        assertNotNull(cloned);
-		    }
+	    @Test
+	    public void testCloneNotNull() {
+	        // Testing that the clone method returns a non-null array
+	        double[][] original = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}};
+	        double[][] cloned = DataUtilities.clone(original);
+	        assertNotNull(cloned);
+	    }
 
-		    @Test
-		    public void testCloneDimensions() {
-		        double[][] original = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}};
-		        double[][] cloned = DataUtilities.clone(original);
-		        assertEquals(original.length, cloned.length);
-		        for (int i = 0; i < original.length; i++) {
-		            assertEquals(original[i].length, cloned[i].length);
-		        }
-		    }
+	    @Test
+	    public void testCloneDimensions() {
+	        // Testing that cloned array has the same dimensions as the original array
+	        double[][] original = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}};
+	        double[][] cloned = DataUtilities.clone(original);
+	        assertEquals(original.length, cloned.length);
+	        for (int i = 0; i < original.length; i++) {
+	            assertEquals(original[i].length, cloned[i].length);
+	        }
+	    }
 
-		    @Test
-		    public void testCloneValues() {
-		        double[][] original = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}};
-		        double[][] cloned = DataUtilities.clone(original);
-		        for (int i = 0; i < original.length; i++) {
-		            assertArrayEquals(original[i], cloned[i], 0.0);
-		        }
-		    }
+	    @Test
+	    public void testCloneValues() {
+	        // Testing that cloned array has the same values as the original array
+	        double[][] original = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}};
+	        double[][] cloned = DataUtilities.clone(original);
+	        for (int i = 0; i < original.length; i++) {
+	            assertArrayEquals(original[i], cloned[i], 0.0);
+	        }
+	    }
 
-		    @Test
-		    public void testCloneIndependence() {
-		        double[][] original = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}};
-		        double[][] cloned = DataUtilities.clone(original);
-		        original[0][0] = 100.0;
-		        assertNotEquals(original[0][0], cloned[0][0]);
-		    }
-		    
-		    
-		    
-		    @Test
-		    public void calculateColumnTotal_NegativeRowCount() {
-		        mockingContext.checking(new Expectations() {
-		            {
-		                one(values).getRowCount();
-		                will(returnValue(-1));
-		                one(values).getValue(0, 0);
-		                will(returnValue(4));
-		                one(values).getValue(0, 1);
-		                will(returnValue(2));
-		            }
-		        });
+	    @Test
+	    public void testCloneIndependence() {
+	        // Testing that changing a value in the original array doesn't affect the cloned array
+	        double[][] original = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}};
+	        double[][] cloned = DataUtilities.clone(original);
+	        original[0][0] = 100.0;
+	        assertNotEquals(original[0][0], cloned[0][0]);
+	    }
 
-		        double result2 = DataUtilities.calculateColumnTotal(values, 0);
-		        assertEquals(16.0, result2, .000000001d);
-		    }
+	    @Test
+	    public void calculateColumnTotal_NegativeRowCount() {
+	        // Testing column total calculation with negative row count
+	        mockingContext.checking(new Expectations() {
+	            {
+	                one(values).getRowCount();
+	                will(returnValue(-1));
+	                one(values).getValue(0, 0);
+	                will(returnValue(4));
+	                one(values).getValue(0, 1);
+	                will(returnValue(2));
+	            }
+	        });
+
+	        double result2 = DataUtilities.calculateColumnTotal(values, 0);
+	        assertEquals(16.0, result2, .000000001d);
+	    }
 
 		    
 	    
