@@ -22,7 +22,7 @@ Text…
 
 ### Data Flow Graph
 
-<img src="SufyanAyaz/seng438-a3-group-08/data-flow-images/calculateColumnTotalDataFlowGraph.jpg" alt="SufyanAyaz/seng438-a3-group-08/data-flow-images/calculateColumnTotalDataFlowGraph.jpg"/>
+![calculateColumnTotal Data Flow Graph](data-flow-images/calculateColumnTotalDataFlowGraph.jpg)
 
 ### The Def-Use Sets per Statement
 
@@ -93,7 +93,7 @@ As it can be see by the calculation stated above, the constrain(double value) me
 
 ### Data Flow Graph
 
-<img src="SufyanAyaz/seng438-a3-group-08/data-flow-images/constrainMethodDataFlowGraph.jpg" alt="SufyanAyaz/seng438-a3-group-08/data-flow-images/constrainMethodDataFlowGraph.jpg"/>
+![constrain Data Flow Graph](data-flow-images/constrainMethodDataFlowGraph.jpg)
 
 ### The Def-Use Sets per Statement
 
@@ -153,29 +153,29 @@ Text…
 
 ### Statement/Line Coverage
 
-<img src="SufyanAyaz/seng438-a3-group-08/Range Coverage Images/RangeStatement_LineCoverage.jpg" alt="SufyanAyaz/seng438-a3-group-08/Range Coverage Images/RangeStatement_LineCoverage.jpg"/>
+![Range Statement/Line Coverage](Range-Coverage-Images/RangeStatement_LineCoverage.jpg)
 
 ### Branch Coverage
 
-<img src="SufyanAyaz/seng438-a3-group-08/Range Coverage Images/RangeBranchCoverage.jpg" alt="SufyanAyaz/seng438-a3-group-08/Range Coverage Images/RangeBranchCoverage.jpg"/>
+![Range Branch Coverage](Range-Coverage-Images/RangeBranchCoverage.jpg)
 
 ### Method (Condition) Coverage
 
-<img src="SufyanAyaz/seng438-a3-group-08/Range Coverage Images/RangeMethodCoverage.jpg" alt="SufyanAyaz/seng438-a3-group-08/Range Coverage Images/RangeMethodCoverage.jpg"/>
+![Range Method/Condition Coverage](Range-Coverage-Images/RangeMethodCoverage.jpg)
 
 ## DataUtilities Class
 
 ### Statement/Line Coverage
 
-<img src="SufyanAyaz/seng438-a3-group-08/DataUtilitie Coverage Images/DataUtilitiesStatement_LineCoverage.jpg" alt="SufyanAyaz/seng438-a3-group-08/DataUtilitie Coverage Images/DataUtilitiesStatement_LineCoverage.jpg"/>
+![DataUtilities Statement/Line Coverage](DataUtilitie-Coverage-Images/DataUtilitiesStatement_LineCoverage.jpg)
 
 ### Branch Coverage
 
-<img src="SufyanAyaz/seng438-a3-group-08/DataUtilitie Coverage Images/DataUtilitiesBranchCoverage.jpg" alt="SufyanAyaz/seng438-a3-group-08/DataUtilitie Coverage Images/DataUtilitiesBranchCoverage.jpg"/>
+![DataUtilities Branch Coverage](DataUtilitie-Coverage-Images/DataUtilitiesBranchCoverage.jpg)
 
 ### Method (Condition) Coverage
 
-<img src="SufyanAyaz/seng438-a3-group-08/DataUtilitie Coverage Images/DataUtilitiesMethodCoverage.jpg" alt="SufyanAyaz/seng438-a3-group-08/DataUtilitie Coverage Images/DataUtilitiesMethodCoverage.jpg"/>
+![DataUtilities Method/Condition Coverage](DataUtilitie-Coverage-Images/DataUtilitiesMethodCoverage.jpg)
 
 # 6 Pros and Cons of coverage tools used and Metrics you report
 
