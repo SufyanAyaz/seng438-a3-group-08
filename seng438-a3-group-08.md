@@ -145,7 +145,31 @@ Text…
 
 # 4 A high level description of five selected test cases you have designed using coverage information, and how they have increased code coverage
 
-Text…
+## combineIgnoringNaNAndNull()
+```java
+    @Test
+    public void combineIgnoringNaNAndNull() {
+    	double nan = Double.NaN;
+    	Range range1 = new Range(nan, nan);
+    	Range range2 = null;
+    	Range range3 = Range.combineIgnoringNaN(range1, range2);
+    	assertEquals("Range should just be null", null, range3);
+    }
+```
+For this test case we defined the first range as a NaN range and the second as a null range so that the case where range2 is null and range1 is a NaN range would be covered, so that the return null statement in the nested conditional would be reached. This in turn increased our Statement and Branch coverage. 
+
+## testEqualsWithUnequalUpperBound()
+```java
+    @Test
+    public void testEqualsWithUnequalUpperBound() {
+        Range range1 = new Range(0.0, 10.0);
+        Range range2 = new Range(0.0, 5.0); // Different upper bound
+        boolean eq = range1.equals(range2);
+        assertFalse("Range 1 and Range 2 are not equal", eq);
+    }
+```
+For this test cased we defined range1 and range2 with the same lower bounds but different upper bounds so that the case where range1 and range2 have the same lower bound but different upper bounds is not equal would be covered, so that the second conditional and its body pertaining to the upper bounds would execute after skipping the first conditional pertaining to the lower bounds. This in turn increased our Statement and Branch Coverage.
+
 
 # 5 A detailed report of the coverage achieved of each class and method (a screen shot from the code cover results in green and red color would suffice)
 
