@@ -170,6 +170,54 @@ For this test case we defined the first range as a NaN range and the second as a
 ```
 For this test cased we defined range1 and range2 with the same lower bounds but different upper bounds so that the case where range1 and range2 have the same lower bound but different upper bounds is not equal would be covered, so that the second conditional and its body pertaining to the upper bounds would execute after skipping the first conditional pertaining to the lower bounds. This in turn increased our Statement and Branch Coverage.
 
+## testCloneValues()
+```java
+    @Test
+    public void testCloneValues() {
+        // Testing that cloned array has the same values as the original array
+        double[][] original = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}};
+        double[][] cloned = DataUtilities.clone(original);
+        for (int i = 0; i < original.length; i++) {
+            assertArrayEquals(original[i], cloned[i], 0.0);
+        }
+    }
+```
+For this test case, we defined 2D arrays called original and cloned, and populated the original array with values. Then, we used the DataUtilities.clone() method to create a cloned array. The test ensures that the cloned array has the same values as the original array by iterating through each row and using assertArrayEquals() to compare corresponding rows of both arrays. This increased both, our branch coverage and statement coverage.
+
+## testEqual_DifferentValues()
+```java
+    // Test for checking inequality when arrays have different values.
+    @Test
+    public void testEqual_DifferentValues() {
+        double[][] a = new double[][] { { 1.0, 2.0 }, { 3.0, 4.0 } };
+        double[][] b = new double[][] { { 1.0, 2.0 }, { 3.0, 5.0 } };
+        assertFalse(DataUtilities.equal(a, b));
+    }
+```
+For this test case, we're examining inequality when arrays have different values. We've defined two 2D arrays, 'a' and 'b', with different values in the second row of array 'b'. The test verifies that the equal() method returns false when comparing these two arrays. This ensures that the method correctly identifies inequality between arrays by comparing corresponding elements. Consequently, this test contributes to enhancing the statement and branch coverage by validating the behavior of the method in scenarios where arrays differ in values.
+
+## calculateColumnTotalForTwoValues_ValidRows()
+```java
+    @Test
+    public void calculateColumnTotalForTwoValues_ValidRows() {
+        // Testing the calculation of column total for two valid rows
+        int[] validRows = {0,1};
+        mockingContext.checking(new Expectations() {
+            {
+                one(values).getRowCount();
+                will(returnValue(2));
+                one(values).getValue(0, 0);
+                will(returnValue(7.5));
+                one(values).getValue(1, 0);
+                will(returnValue(2.5));
+            }
+        });
+        double result = DataUtilities.calculateColumnTotal(values, 0, validRows);
+        assertEquals(result, 10.0, .000000001d);
+    }
+```
+In the calculateColumnTotalForTwoValues_ValidRows() test, we verify the method's ability to accurately compute the column total for two specified rows. Using a mocking context, we simulate interactions with a data structure called 'values', retrieving specific values for the given rows and column index. The method then sums these values to calculate the total for the specified column. We expect the total to be 10.0 and verify this result with a precision of .000000001d. This test ensures the method performs correctly, contributing to an increase of branch coverage and statement coverage.
+
 
 # 5 A detailed report of the coverage achieved of each class and method (a screen shot from the code cover results in green and red color would suffice)
 
