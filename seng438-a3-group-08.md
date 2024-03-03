@@ -203,7 +203,11 @@ For this test cased we defined range1 and range2 with the same lower bounds but 
 
 # 6 Pros and Cons of coverage tools used and Metrics you report
 
-Text…
+Our group chose to use EclEmma for this assignment. There were a few pros we noticed while using EclEmma, with the main one being that it seamlessly integrates into the Eclipse IDE, letting us work in a familiar environment for code analysis without requiring additional setup. EclEmma itself also provided a user-friendly interface, which allowed us to easily navigate through code coverage reports and analyze the results. EclEmma also supports multiple coverage metrics, including statement coverage, branch coverage, and condition coverage, which provided comprehensive insights into the quality of tests.
+
+The one main disadvantage was that it was a little difficult to navigate through EclEmma at first. A lot of features that was required for us were hidden in subtabs and were hard to find at first. This was an issue when we were trying to change the type of coverage we were looking for,
+
+We reported three coverage metrics in our report. Statement coverage evaluates whether each line of code has been executed at least once during the testing process. Branch coverage indicates the percentage of branches in the code that have been covered by the test cases. Meanwhile, method coverage evaluates whether each method or function defined in the source code has been covered during the testing process.
 
 # 7 A comparison on the advantages and disadvantages of requirements-based test generation and coverage-based test generation.
 
