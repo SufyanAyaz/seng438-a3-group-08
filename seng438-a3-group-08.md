@@ -14,7 +14,7 @@ for each group. Please see each lab document for details.)
 
 # 1 Introduction
 
-Text…
+In this lab we were given the task of expanding our test suite for two classes from the JFreeChart framework (our SUT), Range (org.jfree.data.Range), and DataUtilities (org.jfree.data.DataUtilities). The purpose of this lab is to implement and familiarize ourselves with white-box testing methodologies using coverage tools. The tool that we chose to use was EclEmma, as it was the recommended tool, and it is already built into Eclipse. This lab allowed us to find all the edge cases, methods, statements, and branches that we missed in our original test suite from the previous lab. 
 
 # 2 Manual data-flow coverage calculations for calculateColumnTotal() and constrain() methods
 
