@@ -141,7 +141,7 @@ As it can be see by the calculation stated above, the calculateColumnTotal(Value
 
 # 3 A detailed description of the testing strategy for the new unit test
 
-Text…
+Our strategy for this assignment and the new unit tests and overall increasing our coverage on the Range and DataUtilities classes was to check our initial test cases from Assignment 2 and see where our coverages were at currently so we could gauge how much work we had to do. From there we used the Javadoc documentation to see which methods we did not write tests for so that we could write tests for them. For our new tests we tried our best to consider edge cases, branches, boundary values, etc. that could affect and/or improve our different coverage metrics. From there, EclEmma was a crucial tool that aided us in finding the exact methods, branches, and lines that were uncovered and being overlooked and causing our coverage to drop, so that we could develop test cases that covered these parts that we missed. All of these methods combined helped us achieve the desired coverage metrics. 
 
 # 4 A high level description of five selected test cases you have designed using coverage information, and how they have increased code coverage
 
