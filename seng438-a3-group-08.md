@@ -266,7 +266,7 @@ Coverage-based testing is a white box testing methodology that is more tedious t
 
 # 8 A discussion on how the team work/effort was divided and managed
 
-Text…
+Our team utilized Discord for communication again. Initially we completed the “Familiarization” section together, where we set up the new projects and its artifacts, imported our previous tests, tested them to ensure they work, and then coverage tested them to see where we were at. We also browsed through the updated Javadoc documentation again and familiarized ourselves with it and checked for new methods or any other methods we may have missed initially. At this point we also divided up the work and split up the tasks and methods to either increase coverage for, or write new tests for the methods we missed. The way we split up was into pairs, where one pair focused on improving the Range class coverage and the other on DataUtilities. Once everyone completed their assigned methods and got their minimum coverages we regrouped to review and check each other's tests to minimize our potential errors and so we all received a well-rounded experience and idea of the testing process for this assignment.
 
 # 9 Any difficulties encountered, challenges overcome, and lessons learned from performing the lab
 
